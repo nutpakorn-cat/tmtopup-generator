@@ -100,7 +100,7 @@ if(\$_SERVER['REMOTE_ADDR'] == '203.146.127.115' && isset(\$_GET['request']))
 		if(mysql_num_rows(\$result) == 1)
 		{
 			\$row = mysql_fetch_assoc(\$result);
-			if(mysql_query('UPDATE `'.\$_CONFIG['mysql']['tbname'].'` SET `'. \$_CONFIG['TMN']['point_field_name'] .'` = `'. \$_CONFIG['TMN']['point_field_name'] .'+'. \$_CONFIG['TMN'][\$request['cardcard_amount']]['point'] .' WHERE `'. \$_CONFIG['mysql']['field_username'] .'` = '. \$row[\$_CONFIG['mysql']['field_username']] .' LIMIT 1 ') == false)
+			if(mysql_query(\"UPDATE `\". \$_CONFIG['mysql']['tbname'] .\"` SET `\". \$_CONFIG['TMN']['point_field_name'] .\"` = `\". \$_CONFIG['TMN']['point_field_name'] .\"`+'\". \$_CONFIG['TMN'][\$request['cardcard_amount']]['point'] .\"' WHERE `\". \$_CONFIG['mysql']['field_username'] .\"` = '\". \$row[\$_CONFIG['mysql']['field_username']] .\"' LIMIT 1 \") == false)
 			{
 				echo 'ERROR|MYSQL_UDT_ERROR|' . mysql_error();
 			}
