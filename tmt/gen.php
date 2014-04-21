@@ -32,7 +32,7 @@ if(empty($_SESSION['usegen']))
 // ------------------------------------------------------------------------------------------------
 /* MySQL Config | Begin */
 // Hostname ของ MySQL Server
-\$_CONFIG['mysql']['dbhost'] = '{$_POST["host"]}';
+\$_CONFIG['mysql']['dbhost'] = 'localhost';
 
 // Username ที่ใช้เชื่อมต่อ MySQL Server
 \$_CONFIG['mysql']['dbuser'] = '{$_POST["username"]}';
@@ -147,8 +147,6 @@ else
                     <div class="panel-body">
                         <form class="form-group" method="post" action="<?php $_SERVER['PHP_SELF']?>">
                             <legend>Mysql setting.</legend>
-                            <input class="form-control" name="host" type="text" placeholder="Host ที่ใช้เก็บฐานข้อมูล เช่น mysql.xx.com localhost 202.129.23.52 หากไม่ทราบกรุณาติดต่อผู้ให้บริการ vps" required>
-                            <p></p>
                             <input class="form-control" name="username" type="text" placeholder="Username ที่ใช้เชื่อมต่อ MySQL Server" required>
                             <p></p>
                             <input class="form-control" name="password" type="text" placeholder="Password ที่ใช้เชื่อมต่อ MySQL Server" required>
